@@ -1,7 +1,10 @@
 package controller;
 
+
 import models.Task;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import services.TaskService;
 
 import java.util.List;
@@ -15,8 +18,10 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    public String getTasks(){
+    @GetMapping
+    public String getTasks(Model model){
         List<Task> tasks = taskService.getAllTasks();
+        model.addAttribute("tasks",tasks);
         return "tasks";
     }
 }
