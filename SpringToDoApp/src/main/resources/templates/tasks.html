@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>ToDo Spring App</title>
 </head>
 <body>
-<h1>Hello</h1>>
+    <h1>Hello</h1>>
+    <div>
+        <th:block th:each="task : ${task}">
 
+            <div>
+                <span th:text="${task.title}">
+                    Task Title
+                </span>
+            </div>
+
+        </th:block>
+
+    </div>
 </body>
 </html>
