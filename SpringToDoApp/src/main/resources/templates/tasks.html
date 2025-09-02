@@ -7,6 +7,14 @@
 <body>
     <h1>Hello</h1>>
     <div>
+        <form action="/" method="post">
+            <div>
+                <input type="text" name="title" placeholder="Add a new task" required>
+            </div>>
+            <div>
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
         <th:block th:each="task : ${task}">
 
             <div>
@@ -14,9 +22,7 @@
                     Task Title
                 </span>
             </div>
-
         </th:block>
-
     </div>
 </body>
 </html>
